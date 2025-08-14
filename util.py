@@ -37,12 +37,22 @@ def display_contact_by_name(contact_to_display, phone_data):
     else:
         print("Name not found.")
 
+def check_already_exist(name_to_add, phone_data):
+
+    for ind, contact in enumerate(phone_data):
+        if str(contact["name"]) == str(name_to_add):
+            return True
+
+    return False
+
 # Function: adds a contact
 def add_contact(name_to_add, number_to_add, phone_data):
-    phone_data.append({"name": name_to_add, "num": number_to_add})
-    print(f"Added new contact: {name_to_add}, with number: {number_to_add}")
-
-    write_file(file_name='phone_num.json', data=phone_data)
+    if not(check_already_exist(name_to_add, phone_data)):
+        phone_data.append({"name": name_to_add, "num": number_to_add})
+        print(f"Added new contact: {name_to_add}, with number: {number_to_add}")
+        write_file(file_name='phone_num.json', data=phone_data)
+    else:
+        print("Contact already exists.")
 
 # Function: deletes a contact
 def delete_contact(name_to_delete, phone_data):
