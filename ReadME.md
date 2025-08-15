@@ -44,7 +44,7 @@ phone-book
 ```
 ---
 
-## 🔑 Key Functions
+## Key Functions
 
 ### `write_file(file_name, data)`
 - Saves the given `data` (list) into a JSON file.  
