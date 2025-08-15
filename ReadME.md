@@ -52,7 +52,7 @@ phone-book
 
 ```python
 write_file("phone_num.json", [{"name": "alice", "num": 123}])
-```
+``` 
 ---
 ### `read_file(file_name)`
 - Reads a JSON file and returns it as a Python object (`list`/`dict`).  
